@@ -408,12 +408,12 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
                         child: Row(
                           children: widget.bottomActions ??
                               [
-                                SizedBox(width: 14.0),
-                                CurrentPosition(),
-                                SizedBox(width: 8.0),
-                                ProgressBar(isExpanded: true),
-                                RemainingDuration(),
-                                PlaybackSpeedButton(),
+//                                SizedBox(width: 14.0),
+//                                CurrentPosition(),
+//                                SizedBox(width: 8.0),
+//                                ProgressBar(isExpanded: true),
+//                                RemainingDuration(),
+//                                PlaybackSpeedButton(),
                                 FullScreenButton(),
                               ],
                         ),

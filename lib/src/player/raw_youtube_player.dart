@@ -36,7 +36,7 @@ class RawYoutubePlayer extends StatefulWidget {
 class _RawYoutubePlayerState extends State<RawYoutubePlayer>
     with WidgetsBindingObserver {
   final Completer<WebViewController> _webController =
-      Completer<WebViewController>();
+  Completer<WebViewController>();
   YoutubePlayerController controller;
   PlayerState _cachedPlayerState;
   bool _isPlayerReady = false;
@@ -222,7 +222,7 @@ class _RawYoutubePlayerState extends State<RawYoutubePlayer>
         onWebViewCreated: (webController) {
           _webController.complete(webController);
           _webController.future.then(
-            (webViewController) {
+                (webViewController) {
               controller.updateValue(
                 controller.value.copyWith(webViewController: webViewController),
               );
@@ -291,16 +291,11 @@ class _RawYoutubePlayerState extends State<RawYoutubePlayer>
                     events: {
                         onReady: function(event) { 
                           //hide top title div
-                            for (let element of document.getElementsByClassName("ytp-chrome-top"))
-                            {
-                              element.style.display="none";
+                          for (let element of document.getElementsByClassName("ytp-chrome-top"))
+                          {
+                            element.style.display="none";
                             }
-                            for (let element of document.getElementsByClassName("ytp-youtube-button"))
-                            {
-                               element.style.display="none";
-                            }
-                          Ready.postMessage("Ready"); 
-                        },
+                          Ready.postMessage("Ready"); },
                         onStateChange: function(event) { sendPlayerStateChange(event.data); },
                         onPlaybackQualityChange: function(event) { PlaybackQualityChange.postMessage(event.data); },
                         onPlaybackRateChange: function(event) { PlaybackRateChange.postMessage(event.data); },
@@ -339,7 +334,7 @@ class _RawYoutubePlayerState extends State<RawYoutubePlayer>
                 player.playVideo();
                 return '';
             }
-
+            
             function pause() {
                 player.pauseVideo();
                 //hide pause overlay(more video overlay) 
